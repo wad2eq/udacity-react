@@ -5,6 +5,26 @@ import React, { Component } from "react";
 import ListPlayers from "./ListPlayers";
 import AddPlayers from "./AddPlayers";
 
+
+// data
+
+
+
+const players = [{
+  name: "wad",
+  firstName: "Mirek",
+  lastName: "Kedzierski",
+  playedGames: 12,
+},
+{
+  name: "kacpi",
+  firstName: "Kacper",
+  lastName: "Suchodolski",
+  playedGames: 102,
+},
+
+]
+
 // Class users
 class Players extends Component {
     constructor(prop){
@@ -24,7 +44,7 @@ class Players extends Component {
         {
             !this.state.showPlayerList && ( <AddPlayers />)
         }
-        <ListPlayers /> 
+        <ListPlayers playerList = {players} />
         {
             this.state.showPlayerList && ( <button onClick={this.renderForm}>Add user </button>)
         }
