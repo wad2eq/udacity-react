@@ -5,28 +5,46 @@ import React, { Component } from "react";
 import ListPlayers from "./ListPlayers";
 import AddPlayers from "./AddPlayers";
 
+
+
+const players = [{
+  name: "wad",
+  firstName: "Mirek",
+  lastName: "Kedzierski",
+  playedGames: 12,
+},
+{
+  name: "kacpi",
+  firstName: "Kacper",
+  lastName: "Suchodolski",
+  playedGames: 102,
+},
+
+]
+
 // Class users
 class Players extends Component {
     constructor(prop){
         super(prop);
         this.state = {
-            showPlayerList: true
+            showForm: true
         }
     }
-
-    renderForm=()=>{
-        this.setState((currentState)=> ({showPlayerList : !currentState.showPlayerList}))
+    //Flip the view of the applicaton
+    showForm=()=>{
+      console.log("showForm");
+        this.setState((currentState)=> ({showForm : !currentState.showForm}))
     }
 
   render() {
     return (
       <>
         {
-            !this.state.showPlayerList && ( <AddPlayers />)
+            !this.state.showForm && ( <AddPlayers showForm = {this.showForm} />)
         }
-        <ListPlayers /> 
+        <ListPlayers playerList={players} /> 
         {
-            this.state.showPlayerList && ( <button onClick={this.renderForm}>Add user </button>)
+            this.state.showForm && ( <button onClick={this.showForm}>Add user </button>)
         }
       </>
     );
