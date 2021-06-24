@@ -11,9 +11,9 @@ class Player extends Component {
         }))
     }
     render() {
-    console.log(this.props);
+    // console.log(this.props.index);
     return (
-      <li key={this.props.index}>
+      <li>
         <p>
           <strong>{this.props.player.name} </strong> played
           <strong> {

@@ -13,7 +13,7 @@ class ListPlayers extends Component{
                 <div className="player-list">
                     <ul>
                     {
-                        this.props.playerList.map((player, index)=> <Player player={player} index={index} />)
+                        this.props.playerList.map((player, index)=> <Player player={player} index={index} key={index} />)
                     }
                     </ul>
                 </div>
