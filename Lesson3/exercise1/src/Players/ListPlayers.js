@@ -1,20 +1,24 @@
+import { Component } from "react";
+import Player from "./Player";
 
-
-function ListPlayers({playerList}){
-        console.log(playerList);
-        return(
-            <header>
-                <h2> Those are the best players</h2>
-                <ul>
-                    {playerList.map((player, index) => (
-                        <li key={index}>
-                            <strong>{player.name}</strong> played already :
-                            <strong>{player.playedGames} GAMES</strong>
-                        </li>
-                        ))}
-                </ul>
-            </header>
-        )
+// TODO: add posiblities to hide played games
+class ListPlayers extends Component {
+  render() {
+    return (
+      <div>
+        <header>
+          <h2> List of players</h2>
+        </header>
+        <div className="player-list">
+          <ul>
+            {this.props.playerList.map((player, index) => (
+              <Player player={player} index={index} key={index} />
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default ListPlayers;
