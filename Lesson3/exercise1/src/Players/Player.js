@@ -15,7 +15,7 @@ class Player extends Component {
     return (
       <li>
         <p>
-          <strong>{this.props.player.name} </strong> played
+          <strong>{this.props.player.nickName} </strong> played
           <strong> {
               this.state.hideGames? 
                 "0":

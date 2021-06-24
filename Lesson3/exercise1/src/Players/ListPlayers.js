@@ -8,7 +8,7 @@ class ListPlayers extends Component{
         return(
             <div>
                 <header>
-                    <h2> Those are the best players</h2>
+                    <h2> List of players</h2>
                 </header>
                 <div className="player-list">
                     <ul>
